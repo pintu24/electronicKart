@@ -1,23 +1,43 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <%@ include file="navigationbar.jsp" %>
-<html>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="spforms" %>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Register</title>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 
-<form action="carryuserinfo">
-<table>
-<tr><td>username</td><td><input type="text" name="us"/></td></tr>
-<tr><td>password </td><td><input type="password" name="ps"/></td></tr>
-<tr><td>email </td><td><input type="text" name="em"/></td></tr>
-<tr><td>mobile.no </td><td><input type="text" name="mb"/></td></tr>
-</table>
-<input type="submit" value="SignUp">
-</form>
+<div class="container">
+  <h2>Stacked form</h2>
+  <spforms:form action="carryuserinfo" method="post" modelAttribute="usr">
+  
+      <div class="form-group">
+      <label for="username">Username:</label>
+      <spforms:input type="text" class="form-control" placeholder="Enter Username" path="userName"/>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <spforms:input type="email" class="form-control" placeholder="Enter email" path="email"/>
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <spforms:input type="password" class="form-control" placeholder="Enter password" path="password"/>
+    </div>
+    
+        <div class="form-group">
+      <label for="mobile.no">Mobile.no:</label>
+      <spforms:input type="text" class="form-control" placeholder="Enter mobile.no" path="mobileNo"/>
+    </div>
+
+    <button type="submit" class="btn btn-primary">SignUp</button>
+  </spforms:form>
+</div>
 
 </body>
 </html>

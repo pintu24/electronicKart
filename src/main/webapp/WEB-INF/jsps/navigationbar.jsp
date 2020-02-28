@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+<nav class="navbar navbar-expand-sm bg-primary navbar-light">
   <!-- Brand -->
     <a class="navbar-brand" href="founder">
     <img src="G:\projectlogo\StarkIndustries2.png" alt="logo" style="width:60px;">
@@ -32,7 +32,7 @@
     <!-- Dropdown -->
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Dropdown link
+        Products
       </a>
       <div class="dropdown-menu">
        <a class="dropdown-item" href="addproduct">Add product</a>

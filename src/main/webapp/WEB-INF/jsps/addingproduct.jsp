@@ -1,21 +1,43 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <%@ include file="navigationbar.jsp" %>
-<html>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="spforms" %>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-<form action="carryproduct">
-<table>
-<tr><td>ProductId</td><td><input type="text" name="pid"></td></tr>
-<tr><td>ProductName</td><td><input type="text" name="pname"></td></tr>
-<tr><td>ProductDescription</td><td><input type="text" name="pdes"></td></tr>
-<tr><td>ProductPrice</td><td><input type="text" name="ppri"></td></tr>
-</table>
-<input type="submit" value="Submit">
-</form>
+
+<div class="container">
+  <h2>Stacked form</h2>
+  <spforms:form action="carryproduct" method="post" modelAttribute="prolist">
+  
+      <div class="form-group">
+      <label for="productId">ProductId:</label>
+      <spforms:input type="text" class="form-control" placeholder="Enter ProductId" path="productId"/>
+    </div>
+    <div class="form-group">
+      <label for="productName">ProductName:</label>
+      <spforms:input type="text" class="form-control" placeholder="Enter productName" path="productName"/>
+    </div>
+    <div class="form-group">
+      <label for="productDescription">Description:</label>
+      <spforms:input type="text" class="form-control" placeholder="Enter Description" path="productDescription"/>
+    </div>
+    
+        <div class="form-group">
+      <label for="productPrice">Price:</label>
+      <spforms:input type="text" class="form-control" placeholder="Enter Price" path="productPrice"/>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </spforms:form>
+</div>
+
 </body>
 </html>
