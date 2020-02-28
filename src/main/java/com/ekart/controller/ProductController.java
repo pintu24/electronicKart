@@ -34,4 +34,18 @@ public class ProductController {
 		view.addObject("prolist", list);
 		return view;
 	}
+	
+	@RequestMapping("/addproduct")
+	public ModelAndView addingproducts()
+	{
+		ModelAndView modelAndView=new ModelAndView("addingproduct");
+		return modelAndView;
+	}
+	
+	@RequestMapping("/carryproduct")
+	public ModelAndView carryingProductInfo()
+	{
+		ModelAndView view=new ModelAndView("Home");
+		return view;
+	}
 }

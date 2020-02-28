@@ -21,7 +21,7 @@
       <a class="nav-link" href="home">Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Register</a>
+      <a class="nav-link" href="register">Register</a>
     </li>
         <li class="nav-item">
       <a class="nav-link" href="#">Login</a>
@@ -33,9 +33,8 @@
         Dropdown link
       </a>
       <div class="dropdown-menu">
+       <a class="dropdown-item" href="addproduct">Add product</a>
         <a class="dropdown-item" href="displayproducts">Show Product</a>
-        <a class="dropdown-item" href="#">Link 2</a>
-        <a class="dropdown-item" href="#">Link 3</a>
       </div>
     </li>
   </ul>
