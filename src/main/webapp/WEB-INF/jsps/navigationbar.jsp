@@ -11,9 +11,11 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
   <!-- Brand -->
-  <a class="navbar-brand" href="#">Logo</a>
+    <a class="navbar-brand" href="founder">
+    <img src="G:\projectlogo\StarkIndustries2.png" alt="logo" style="width:60px;">
+  </a>
 
   <!-- Links -->
   <ul class="navbar-nav">
