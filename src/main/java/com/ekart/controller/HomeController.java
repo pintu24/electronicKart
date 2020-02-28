@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.ekart.Dao.ConnectingToDB;
 import com.ekart.model.User;
 
 @Controller
@@ -29,6 +30,8 @@ public class HomeController {
 	@PostMapping("/carryuserinfo")
 	public ModelAndView userinfo(@ModelAttribute("usr") User user)
 	{
+		ConnectingToDB toDB=new ConnectingToDB();
+		toDB.getConnection(user);
 		ModelAndView view=new ModelAndView("Home");
 		return view;
 	}
