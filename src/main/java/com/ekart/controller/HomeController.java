@@ -1,5 +1,6 @@
 package com.ekart.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -7,10 +8,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ekart.Dao.ConnectingToDB;
+import com.ekart.Dao.UserDao;
 import com.ekart.model.User;
 
 @Controller
 public class HomeController {
+	
+	@Autowired
+	UserDao userDao;
 	
 	public HomeController(){
 		
@@ -30,6 +35,8 @@ public class HomeController {
 	@PostMapping("/carryuserinfo")
 	public ModelAndView userinfo(@ModelAttribute("usr") User user)
 	{
+		
+		userDao.testSessionFactory();
 		ConnectingToDB toDB=new ConnectingToDB();
 		toDB.getConnection(user);
 		ModelAndView view=new ModelAndView("Home");

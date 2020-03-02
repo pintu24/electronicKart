@@ -1,0 +1,17 @@
+package com.ekart.Dao;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class UserDao {
+
+	@Autowired
+	SessionFactory sessionFactory;
+	
+	public void testSessionFactory()
+	{
+		System.out.println("session factory____________"+sessionFactory);
+	}
+}
