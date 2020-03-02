@@ -1,6 +1,7 @@
 package com.ekart.controller;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -32,11 +33,14 @@ public class ProductController {
 	@RequestMapping("/displayproducts")
 	public ModelAndView allProducts()
 	{
+		/*
 		Product product=new Product(420,"5Star","really chocolatte",15);
 		Product product2=new Product(520,"Munch","really crunchy",10);
 		ArrayList<Product>list=new ArrayList<Product>();
 		list.add(product);
 		list.add(product2);
+		*/
+		List<Product>list=productDao.getProducts();
 		ModelAndView view=new ModelAndView("showproducts");
 		view.addObject("prolist", list);
 		return view;
@@ -45,7 +49,9 @@ public class ProductController {
 	@RequestMapping("/addproduct")
 	public ModelAndView addingproducts()
 	{
-		Product product=new Product(000, "abc", "blablabla", 999);
+		Product product=new Product();
+		product.setProductId(0);
+		product.setProductPrice(0);
 		ModelAndView modelAndView=new ModelAndView("addingproduct");
 		modelAndView.addObject("prolist", product);
 		return modelAndView;

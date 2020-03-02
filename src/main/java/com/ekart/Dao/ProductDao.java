@@ -2,9 +2,12 @@ package com.ekart.Dao;
 
 
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -23,5 +26,18 @@ public class ProductDao
 		Transaction transaction=session.beginTransaction();
 		transaction.commit();
 		session.close();
+	}
+	
+	public List getProducts()
+	{
+		Session session=sessionFactory.openSession();
+		Query query=session.createQuery("from Product");
+		List<Product>list=query.list();
+		for(Product product:list)
+		{
+			
+		}
+		session.close();
+		return list;
 	}
 }

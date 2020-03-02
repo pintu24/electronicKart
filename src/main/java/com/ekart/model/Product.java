@@ -18,12 +18,22 @@ public class Product
 	@Column
 	private int productPrice;
 	
-	public Product(int productId,String productName,String productDescription,int productPrice)
-	{
-		this.productId=productId;
-		this.productName=productName;
-		this.productDescription=productDescription;
-		this.productPrice=productPrice;
+	
+
+	public void setProductId(int productId) {
+		this.productId = productId;
+	}
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+
+	public void setProductDescription(String productDescription) {
+		this.productDescription = productDescription;
+	}
+
+	public void setProductPrice(int productPrice) {
+		this.productPrice = productPrice;
 	}
 
 	public int getProductId() {
