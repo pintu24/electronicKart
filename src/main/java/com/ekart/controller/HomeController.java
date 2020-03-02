@@ -37,8 +37,9 @@ public class HomeController {
 	{
 		
 		userDao.testSessionFactory();
-		ConnectingToDB toDB=new ConnectingToDB();
-		toDB.getConnection(user);
+		//ConnectingToDB toDB=new ConnectingToDB();
+		//toDB.getConnection(user);
+		userDao.insertUser(user);
 		ModelAndView view=new ModelAndView("Home");
 		return view;
 	}

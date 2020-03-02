@@ -2,6 +2,7 @@ package com.ekart.controller;
 
 import java.util.ArrayList;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -9,10 +10,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.ekart.Dao.ProductDao;
 import com.ekart.model.Product;
 
 @Controller
 public class ProductController {
+	
+	@Autowired
+	ProductDao productDao;
 	
 	public ProductController() {
 		System.out.println("this is product controller");
@@ -49,6 +54,8 @@ public class ProductController {
 	@PostMapping("/carryproduct")
 	public ModelAndView carryingProductInfo(@ModelAttribute("prolist") Product product)
 	{
+		
+		productDao.insertProduct(product);
 		ModelAndView view=new ModelAndView("Home");
 		return view;
 	}

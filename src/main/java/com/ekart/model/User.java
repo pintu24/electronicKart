@@ -1,10 +1,21 @@
 package com.ekart.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="ekartusers")
 public class User {
 
+	@Id
 	private String userName;
+	@Column
 	private String email;
+	@Column
 	private String password;
+	@Column
 	private int mobileNo;
 	public String getUserName() {
 		return userName;

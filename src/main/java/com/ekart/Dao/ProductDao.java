@@ -1,28 +1,25 @@
 package com.ekart.Dao;
 
+
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.ekart.model.User;
+import com.ekart.model.Product;
 
 @Component
-public class UserDao {
-
+public class ProductDao
+{
 	@Autowired
 	SessionFactory sessionFactory;
 	
-	public void testSessionFactory()
-	{
-		System.out.println("session factory____________"+sessionFactory);
-	}
-	
-	public void insertUser(User user)
+	public void insertProduct(Product product)
 	{
 		Session session=sessionFactory.openSession();
-		session.save(user);
+		session.save(product);
 		Transaction transaction=session.beginTransaction();
 		transaction.commit();
 		session.close();
