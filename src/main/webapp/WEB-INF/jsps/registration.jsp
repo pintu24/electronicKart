@@ -34,7 +34,11 @@
       <label for="mobile.no">Mobile.no:</label>
       <spforms:input type="text" class="form-control" placeholder="Enter mobile.no" path="mobileNo"/>
     </div>
-
+    
+    <spforms:select class="form-control" path="role">
+    <spforms:option value="ROLE_USER">user</spforms:option>
+    <spforms:option value="ROLE_ADMIN">Admin</spforms:option>
+    </spforms:select>
     <button type="submit" class="btn btn-primary">SignUp</button>
   </spforms:form>
 </div>

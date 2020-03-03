@@ -24,10 +24,18 @@ public class ProductController {
 		System.out.println("this is product controller");
 	}
 	
+	//this is for admin
 	@GetMapping("/home")
 	public String Return()
 	{
 		return"Home";
+	}
+	
+	//this is for user
+	@GetMapping("/userhome")
+	public String Return2()
+	{
+		return"userHome";
 	}
 	
 	@RequestMapping("/displayproducts")
