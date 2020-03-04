@@ -44,9 +44,22 @@ public class ProductDao
 	public Product getSingleProduct(int proId)
 	{
 		Session session=sessionFactory.openSession();
-		Query query =session.createQuery("from Product where productid=:pid");
+		Query query =session.createQuery("from Product where productId=:pid");
 		query.setParameter("pid", proId);
 		Product product=(Product)query.uniqueResult();
+		session.close();
+		return product;
+	}
+	
+	public Product deleteProduct(int proId)
+	{
+		Session session=sessionFactory.openSession();
+		Query query=session.createQuery("from Product where productId=:id");
+		query.setParameter("id", proId);
+		Product product=(Product)query.uniqueResult();
+		session.delete(product);
+		Transaction transaction=session.beginTransaction();
+		transaction.commit();
 		session.close();
 		return product;
 	}

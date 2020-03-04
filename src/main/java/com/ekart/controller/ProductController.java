@@ -80,6 +80,15 @@ public class ProductController {
 		return modelAndView;
 	}
 	
+	@GetMapping("/delete")
+	public ModelAndView deleteProduct(@RequestParam("id")int proId)
+	{
+		Product product=productDao.deleteProduct(proId);
+		ModelAndView modelAndView=new ModelAndView("redirect:displayproductsforadmin");
+		modelAndView.addObject("prolist", product);
+		return modelAndView;
+	}
+	
 	@RequestMapping("/addproduct")
 	public ModelAndView addingproducts()
 	{
