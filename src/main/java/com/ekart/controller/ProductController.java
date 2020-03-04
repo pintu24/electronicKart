@@ -32,7 +32,7 @@ public class ProductController {
 	}
 	
 	//this is for user
-	@GetMapping("/userhome")
+	@RequestMapping("/userhome")
 	public String Return2()
 	{
 		return"userHome";

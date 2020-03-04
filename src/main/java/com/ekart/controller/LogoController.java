@@ -25,4 +25,5 @@ public class LogoController {
 		ModelAndView modelAndView=new ModelAndView("founder");
 		return modelAndView;
 	}
+	
 }

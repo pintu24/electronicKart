@@ -3,6 +3,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ include file="navigationbar.jsp" %>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="x" %>
+    <%@ page isELIgnored="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -16,20 +18,17 @@
 <th>Name</th>
 <th>Description</th>
 <th>Price</th>
+<th>about product</th>
 </tr>
-<%
-ArrayList<Product> arrayList=(ArrayList)request.getAttribute("prolist");
-for(Product product:arrayList)	
-{
-	%>
-	<tr>
-	<td><% out.print(product.getProductId());%></td>
-	<td><%out.print(product.getProductName()); %></td>
-	<td><%out.print(product.getProductDescription()); %></td>
-	<td><%out.print(product.getProductPrice()); %></td>
-<%	
-}
-%>
+<x:forEach items="${prolist}" var="product">
+<tr>
+<td>${product.productId}</td>
+<td>${product.productName }</td>
+<td>${product.productDescription }</td>
+<td>${product.productPrice }</td>
+<td><a href="#">more info</a></td>
+</tr>
+</x:forEach>
 </table>
 </body>
 </html>
