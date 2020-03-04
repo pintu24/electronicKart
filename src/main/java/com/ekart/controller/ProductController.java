@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ekart.Dao.ProductDao;
@@ -52,6 +53,15 @@ public class ProductController {
 		ModelAndView view=new ModelAndView("showproducts");
 		view.addObject("prolist", list);
 		return view;
+	}
+	
+	@GetMapping("/info")
+	public ModelAndView displaySingleProduct(@RequestParam("pid")int proId)
+	{
+		Product product=productDao.getSingleProduct(proId);
+		ModelAndView modelAndView =new ModelAndView("moreinfo");
+		modelAndView.addObject("prolist", product);
+		return modelAndView;
 	}
 	
 	@RequestMapping("/addproduct")

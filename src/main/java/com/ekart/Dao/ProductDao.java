@@ -40,4 +40,14 @@ public class ProductDao
 		session.close();
 		return list;
 	}
+	
+	public Product getSingleProduct(int proId)
+	{
+		Session session=sessionFactory.openSession();
+		Query query =session.createQuery("from Product where productid=:pid");
+		query.setParameter("pid", proId);
+		Product product=(Product)query.uniqueResult();
+		session.close();
+		return product;
+	}
 }

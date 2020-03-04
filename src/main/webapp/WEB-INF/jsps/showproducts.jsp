@@ -26,7 +26,7 @@
 <td>${product.productName }</td>
 <td>${product.productDescription }</td>
 <td>${product.productPrice }</td>
-<td><a href="#">more info</a></td>
+<td><a href="info?pid=${product.productId}">more info</a></td>
 </tr>
 </x:forEach>
 </table>
