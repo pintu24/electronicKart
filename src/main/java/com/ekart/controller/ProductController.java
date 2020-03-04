@@ -55,6 +55,22 @@ public class ProductController {
 		return view;
 	}
 	
+	@RequestMapping("/displayproductsforadmin")
+	public ModelAndView allProductsForAdmin()
+	{
+		/*
+		Product product=new Product(420,"5Star","really chocolatte",15);
+		Product product2=new Product(520,"Munch","really crunchy",10);
+		ArrayList<Product>list=new ArrayList<Product>();
+		list.add(product);
+		list.add(product2);
+		*/
+		List<Product>list=productDao.getProducts();
+		ModelAndView view=new ModelAndView("showadminproducts");
+		view.addObject("prolist", list);
+		return view;
+	}
+	
 	@GetMapping("/info")
 	public ModelAndView displaySingleProduct(@RequestParam("pid")int proId)
 	{

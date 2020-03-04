@@ -36,7 +36,7 @@
       </a>
       <div class="dropdown-menu">
        <a class="dropdown-item" href="addproduct">Add product</a>
-        <a class="dropdown-item" href="displayproducts">Show Product</a>
+        <a class="dropdown-item" href="displayproductsforadmin">Show Product</a>
       </div>
     </li>
   </ul>
